@@ -1,0 +1,30 @@
+{
+  "name": "apilalo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Apílalo: juego de apilar bloques de un toque, con retos para compartir.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test \"tests/*.test.js\"",
+    "android": "vite build && cap sync android && cap open android",
+    "sync": "vite build && cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.2",
+    "@capacitor/filesystem": "8.1.4",
+    "@capacitor/haptics": "8.0.2",
+    "@capacitor/preferences": "8.0.1",
+    "@capacitor/share": "8.0.3",
+    "@fontsource/lilita-one": "5.3.0",
+    "@fontsource/nunito": "5.3.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.2",
+    "vite": "8.3.2"
+  }
+}

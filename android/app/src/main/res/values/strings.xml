@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Apílalo</string>
+    <string name="title_activity_main">Apílalo</string>
+    <string name="package_name">com.kallilabs.apilalo</string>
+    <string name="custom_url_scheme">com.kallilabs.apilalo</string>
+</resources>

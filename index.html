@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#f4d6e4">
+  <meta name="description" content="Un toque, un bloque. Apila lo más alto que puedas y reta a tus amigos.">
+  <meta property="og:title" content="Apílalo">
+  <meta property="og:description" content="Un toque, un bloque. ¿Me superas?">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="__OG_IMAGE__">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>Apílalo</title>
+</head>
+<body>
+  <div id="stage">
+    <canvas id="cv" aria-label="Torre de bloques"></canvas>
+
+    <div id="intro" class="overlay">
+      <div class="panel-top">
+        <h1 class="title">Apílalo</h1>
+        <div class="tagline">Un toque. Un bloque. No te caigas.</div>
+      </div>
+      <div class="panel-bottom">
+        <div class="sheet">
+          <div class="challenge" id="introChallenge" hidden></div>
+          <p class="how">Toca para soltar cada bloque. Lo que sobresale, se cae. Tres perfectos seguidos y el bloque vuelve a crecer.</p>
+          <button class="play" id="playBtn" type="button">Jugar</button>
+          <div class="small-note" id="introBest"></div>
+          <a class="store-link" id="playStoreLink" href="#" target="_blank" rel="noopener" hidden>Descárgalo en Google Play</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="over" class="overlay" hidden>
+      <div class="panel-bottom">
+        <div class="sheet">
+          <div class="sheet-label">Llegaste a</div>
+          <div class="final"><span id="finalNum">0</span> <small id="finalUnit">pisos</small></div>
+          <div class="badge" id="newRecord" hidden>¡Nuevo récord!</div>
+          <div class="result" id="challengeResult" hidden></div>
+          <div class="stats" id="stats"></div>
+          <div class="btn-row">
+            <button class="play" id="againBtn" type="button">Otra vez</button>
+            <button class="play alt" id="challengeBtn" type="button">Retar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-side best" id="bestHud" hidden></div>
+      <div class="score" id="scoreBox" hidden>
+        <div class="score-num" id="scoreNum">0</div>
+        <div class="score-label">pisos</div>
+        <div class="streak" id="streak"></div>
+      </div>
+      <div class="hud-side hud-right">
+        <button class="icon-btn" id="muteBtn" type="button" aria-label="Silenciar" aria-pressed="false">
+          <span id="icoOn"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span>
+          <span id="icoOff" hidden><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6"/></svg></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="pop" aria-live="polite"></div>
+    <div id="hint" class="hint" hidden>Toca para soltar</div>
+  </div>
+
+  <div id="share" hidden role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+    <div class="share-sheet">
+      <h2 class="share-title" id="shareTitle">Reta a alguien</h2>
+      <p class="share-sub" id="shareSub">Manda tu reto por WhatsApp o súbelo a tu estado.</p>
+      <img class="card-preview" id="cardPreview" alt="Imagen del reto con tu torre y tus pisos">
+      <div class="field" id="nameField">
+        <label for="nameInput">Tu nombre (opcional)</label>
+        <input id="nameInput" type="text" maxlength="14" autocomplete="off" autocapitalize="words" placeholder="Ej. Sofi">
+      </div>
+      <button class="play wa" id="shareBtn" type="button" hidden>Compartir reto</button>
+      <a class="play wa" id="waLink" href="https://wa.me/" target="_blank" rel="noopener" hidden>Enviar por WhatsApp</a>
+      <a class="play" id="downloadLink" href="#" download="apilalo-reto.png" hidden>Guardar imagen</a>
+      <button class="play light" id="copyBtn" type="button">Copiar mensaje</button>
+      <textarea class="fallback-msg" id="fallbackMsg" readonly hidden aria-label="Mensaje del reto"></textarea>
+      <div class="status" id="shareStatus" aria-live="polite"></div>
+      <p class="share-sub" id="statusHelp"></p>
+      <button class="close-link" id="closeShare" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

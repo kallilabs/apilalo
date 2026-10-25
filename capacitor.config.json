@@ -1,0 +1,13 @@
+{
+  "appId": "com.kallilabs.apilalo",
+  "appName": "Apílalo",
+  "webDir": "dist",
+  "backgroundColor": "#f4d6e4",
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover",
+      "style": "LIGHT"
+    }
+  }
+}
