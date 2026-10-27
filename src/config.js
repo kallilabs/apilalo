@@ -14,3 +14,10 @@ export const PLAY_URL = env.VITE_PLAY_URL || '';
  * VITE_ALLOW_PLAYER_NAME=false if you want the app to ask for nothing at all.
  */
 export const ALLOW_PLAYER_NAME = env.VITE_ALLOW_PLAYER_NAME !== 'false';
+
+/**
+ * Privacy policy. Google Play requires a link inside the app as well as in the
+ * listing. The app opens the public copy (system browser); the web version
+ * falls back to the bundled page when PUBLIC_URL is not set.
+ */
+export const PRIVACY_URL = PUBLIC_URL ? new URL('privacy.html', PUBLIC_URL).href : 'privacy.html';

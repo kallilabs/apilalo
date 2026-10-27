@@ -46,6 +46,6 @@ Verifícalas contra lo que pide cada pregunta al momento de llenarlas.
 
 - **Anuncios:** la app no contiene anuncios.
 - **Acceso a la app:** toda la funcionalidad está disponible sin restricciones (no hay inicio de sesión).
-- **Seguridad de los datos:** la app no recopila ni comparte datos. Récord, sonido y nombre se guardan solo en el dispositivo; lo que el usuario comparte lo envía él mismo con la app que elige.
+- **Seguridad de los datos:** la app no recopila ni comparte datos. Récord y sonido se guardan solo en el dispositivo; la app no pide nombre ni ningún otro dato; lo que el usuario comparte lo envía él mismo con la app que elige.
 - **Clasificación de contenido:** sin violencia, lenguaje, apuestas ni interacción entre usuarios dentro de la app.
-- **Público objetivo:** si niñas o niños menores de 13 años van a jugarla (y el estilo visual les atrae), declara esos rangos de edad. Así aplica la política de Familias; con esta versión sin anuncios y sin datos, cumplirla es sencillo. Si quieres que la app no pida ningún dato, compila con `VITE_ALLOW_PLAYER_NAME=false`.
+- **Público objetivo (declarado):** 9-12, 13-15, 16-17 y 18+. Aplica la política de Familias; la app no tiene anuncios, no pide datos (el campo de nombre está apagado con `VITE_ALLOW_PLAYER_NAME=false`) y la ficha muestra el compromiso con Familias. No se inscribió en *Aprobado por profesores*.

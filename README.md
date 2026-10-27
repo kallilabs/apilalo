@@ -112,7 +112,9 @@ Con la URL configurada, WhatsApp muestra una vista previa con la imagen `public/
 
 Si van a jugarla menores de 13 años, declara esos rangos de edad. Así aplica la política de Familias de Google Play. Esta versión no tiene anuncios, no usa internet y no envía datos, así que cumplir es sencillo. Si después quieres poner anuncios, solo puedes usar SDKs certificados para Familias y sin anuncios personalizados.
 
-El campo "Tu nombre" es opcional y el nombre nunca sale del teléfono, salvo en el mensaje que el jugador decide enviar. Si prefieres que la app no pida ningún dato, compila con `VITE_ALLOW_PLAYER_NAME=false` en `.env`.
+El campo "Tu nombre" está **apagado** (`VITE_ALLOW_PLAYER_NAME=false` en `.env`): Familias pide la intervención de un adulto antes de que un menor comparta datos personales, y así la app no pide ninguno. El código sigue ahí por si una app futura para mayores lo necesita.
+
+El aviso de privacidad también está **dentro de la app** (enlace en la pantalla de inicio), como exige Play.
 
 ## Lo que no se probó al preparar este proyecto
 

@@ -10,7 +10,7 @@ import {
 } from './challenge.js';
 import { canvasToBlob, renderShareCard } from './share-card.js';
 import { canShareImage, haptic, isNative, onBackButton, shareImage, storage } from './platform.js';
-import { ALLOW_PLAYER_NAME, PLAY_URL, PUBLIC_URL } from './config.js';
+import { ALLOW_PLAYER_NAME, PLAY_URL, PRIVACY_URL, PUBLIC_URL } from './config.js';
 
 const MILESTONES = { 10: '¡10 pisos!', 25: '¡Imparable!', 50: '¡Medio centenar!', 75: '¡Leyenda!', 100: '¡100! ¿En serio?' };
 const KEYS = { best: 'apilalo.best', muted: 'apilalo.muted', name: 'apilalo.name' };
@@ -20,7 +20,7 @@ const el = {
   stage: $('stage'), canvas: $('cv'), intro: $('intro'), over: $('over'), scoreBox: $('scoreBox'),
   scoreNum: $('scoreNum'), streak: $('streak'), bestHud: $('bestHud'), pop: $('pop'), hint: $('hint'),
   finalNum: $('finalNum'), finalUnit: $('finalUnit'), newRecord: $('newRecord'), stats: $('stats'),
-  introBest: $('introBest'), introChallenge: $('introChallenge'), playStoreLink: $('playStoreLink'),
+  introBest: $('introBest'), introChallenge: $('introChallenge'), playStoreLink: $('playStoreLink'), privacyLink: $('privacyLink'),
   challengeResult: $('challengeResult'), mute: $('muteBtn'), icoOn: $('icoOn'), icoOff: $('icoOff'),
   play: $('playBtn'), again: $('againBtn'), challengeBtn: $('challengeBtn'),
   share: $('share'), cardPreview: $('cardPreview'), nameField: $('nameField'), nameInput: $('nameInput'),
@@ -189,6 +189,7 @@ function renderIntro() {
     el.playStoreLink.href = PLAY_URL;
     el.playStoreLink.hidden = false;
   }
+  el.privacyLink.href = PRIVACY_URL;
 }
 
 function renderMute() {
@@ -385,7 +386,8 @@ async function boot() {
   ]);
   best = parseInt(savedBest, 10) || 0;
   sfx.muted = savedMuted === '1';
-  el.nameInput.value = savedName || '';
+  el.nameInput.value = ALLOW_PLAYER_NAME ? savedName || '' : '';
+  if (!ALLOW_PLAYER_NAME && savedName) storage.set(KEYS.name, '');
   renderIntro();
   renderMute();
 }

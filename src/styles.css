@@ -140,6 +140,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .stats { font-size: 14px; font-weight: 700; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .small-note { font-size: 13px; font-weight: 700; color: var(--ink-soft); }
 .store-link { font-size: 15px; font-weight: 800; color: var(--ink); }
+.legal-link { font-size: 12px; font-weight: 700; color: var(--ink-soft); text-underline-offset: 3px; padding: 6px 10px; }
 
 /* ---------- Share sheet (outside the stage so typing and scrolling work) ---------- */
 #share {
